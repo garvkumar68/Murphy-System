@@ -1,0 +1,798 @@
+[
+  {
+    "name": "Fungal Infection",
+    "symptoms": {
+      "itching": "Persistent irritation and discomfort on the skin.",
+      "redness": "Inflammation and discoloration in affected areas.",
+      "peeling_skin": "Flaky and scaly skin, often accompanied by cracks."
+    },
+    "possible_causes": [
+      "Exposure to damp environments",
+      "Poor hygiene",
+      "Weak immune system",
+      "Direct contact with infected individuals or surfaces"
+    ],
+    "medical_relief": [
+      "Antifungal creams (Clotrimazole, Miconazole)",
+      "Oral antifungal medications for severe infections",
+      "Keeping the skin dry and clean",
+      "Avoiding sharing personal items"
+    ]
+  },
+  {
+    "name": "Allergy",
+    "symptoms": {
+      "sneezing": "Frequent nasal irritation leading to sneezing.",
+      "itchy_eyes": "Red, watery, and irritated eyes.",
+      "skin_rashes": "Raised, itchy bumps or patches on the skin."
+    },
+    "possible_causes": [
+      "Pollen, dust, pet dander",
+      "Certain foods (nuts, dairy, shellfish)",
+      "Medications",
+      "Insect stings"
+    ],
+    "medical_relief": [
+      "Antihistamines (Loratadine, Cetirizine)",
+      "Avoiding known allergens",
+      "Nasal sprays and decongestants",
+      "Epinephrine injection for severe reactions (anaphylaxis)"
+    ]
+  },
+  {
+    "name": "GERD (Gastroesophageal Reflux Disease)",
+    "symptoms": {
+      "heartburn": "Burning sensation in the chest, often after eating.",
+      "regurgitation": "Sour or bitter-tasting acid backing up into the throat.",
+      "difficulty_swallowing": "Feeling of food being stuck in the throat."
+    },
+    "possible_causes": [
+      "Weak lower esophageal sphincter",
+      "Obesity",
+      "Smoking and excessive alcohol consumption",
+      "Spicy and fatty foods"
+    ],
+    "medical_relief": [
+      "Proton pump inhibitors (Omeprazole, Pantoprazole)",
+      "Lifestyle modifications (avoiding late-night meals, weight loss)",
+      "Elevating the head while sleeping",
+      "Avoiding acidic and trigger foods"
+    ]
+  },
+  {
+    "name": "Chronic Cholestasis",
+    "symptoms": {
+      "yellow_skin": "Jaundice-like discoloration due to bile flow obstruction.",
+      "itching": "Severe irritation due to bile accumulation in the blood.",
+      "dark_urine": "Urine appearing darker due to excess bilirubin."
+    },
+    "possible_causes": [
+      "Liver diseases (Hepatitis, Cirrhosis)",
+      "Bile duct obstruction",
+      "Certain medications"
+    ],
+    "medical_relief": [
+      "Ursodeoxycholic acid to improve bile flow",
+      "Avoiding alcohol and hepatotoxic drugs",
+      "Liver-supporting diet rich in fiber and antioxidants"
+    ]
+  },
+  {
+    "name": "Drug Reaction",
+    "symptoms": {
+      "skin_rash": "Red, irritated skin due to allergic reaction.",
+      "swelling": "Localized swelling, particularly in the face or throat.",
+      "difficulty_breathing": "Severe allergic reaction (anaphylaxis) requiring immediate attention."
+    },
+    "possible_causes": [
+      "Allergic response to medications",
+      "Incorrect dosage",
+      "Combination of incompatible drugs"
+    ],
+    "medical_relief": [
+      "Discontinuing the triggering medication",
+      "Antihistamines for mild reactions",
+      "Epinephrine injection for severe reactions"
+    ]
+  },
+  {
+    "name": "Peptic Ulcer Disease",
+    "symptoms": {
+      "stomach_pain": "Burning pain in the stomach, usually between meals.",
+      "bloating": "Feeling full even with small meals.",
+      "vomiting_blood": "In severe cases, ulcers may bleed internally."
+    },
+    "possible_causes": [
+      "H. pylori infection",
+      "Long-term use of NSAIDs",
+      "Excess stomach acid"
+    ],
+    "medical_relief": [
+      "Proton pump inhibitors (Omeprazole, Esomeprazole)",
+      "Antibiotics for H. pylori infection",
+      "Avoiding spicy and acidic foods"
+    ]
+  },
+  {
+    "name": "AIDS",
+    "symptoms": {
+      "severe_weight_loss": "Unexplained loss of body mass.",
+      "persistent_infections": "Frequent bacterial, viral, or fungal infections.",
+      "night_sweats": "Excessive sweating, especially during sleep."
+    },
+    "possible_causes": [
+      "HIV virus",
+      "Unprotected sexual contact",
+      "Sharing needles"
+    ],
+    "medical_relief": [
+      "Antiretroviral therapy (ART) to control HIV progression",
+      "Regular immune system monitoring",
+      "Avoiding infections and maintaining a healthy lifestyle"
+    ]
+  },
+  {
+    "name": "Diabetes",
+    "symptoms": {
+      "frequent_urination": "Increased need to urinate, especially at night.",
+      "excessive_thirst": "Constant feeling of thirst despite drinking water.",
+      "unexplained_weight_loss": "Loss of weight despite normal or increased food intake."
+    },
+    "possible_causes": [
+      "Insulin resistance (Type 2)",
+      "Autoimmune destruction of insulin-producing cells (Type 1)",
+      "Genetics and lifestyle factors"
+    ],
+    "medical_relief": [
+      "Insulin therapy for Type 1 diabetes",
+      "Oral medications (Metformin) for Type 2 diabetes",
+      "Healthy diet and regular exercise"
+    ]
+  },
+  {
+    "name": "Gastroenteritis",
+    "symptoms": {
+      "diarrhea": "Frequent, watery stools.",
+      "vomiting": "Persistent nausea and expelling food from the stomach.",
+      "dehydration": "Loss of body fluids leading to dry mouth and dizziness."
+    },
+    "possible_causes": [
+      "Viral infections (Norovirus, Rotavirus)",
+      "Bacterial infections (E. coli, Salmonella)",
+      "Food poisoning"
+    ],
+    "medical_relief": [
+      "Oral rehydration therapy (ORS)",
+      "Probiotics to restore gut flora",
+      "Avoiding dairy and fatty foods during recovery"
+    ]
+  },
+  {
+    "name": "Bronchial Asthma",
+    "symptoms": {
+      "wheezing": "High-pitched whistling sound while breathing.",
+      "breathlessness": "Shortness of breath, especially at night or early morning.",
+      "coughing": "Persistent cough, often worsening with exercise or cold air."
+    },
+    "possible_causes": [
+      "Allergic triggers (dust, pollen, pet dander)",
+      "Respiratory infections",
+      "Cold air and exercise-induced asthma"
+    ],
+    "medical_relief": [
+      "Inhalers (Albuterol, Budesonide)",
+      "Avoiding allergens",
+      "Regular breathing exercises"
+    ]
+  },
+  {
+    "name": "Hypertension (High Blood Pressure)",
+    "symptoms": {
+      "headache": "Frequent or severe headaches, especially in the morning.",
+      "dizziness": "Feeling lightheaded or faint.",
+      "chest_pain": "Pain or pressure in the chest, indicating potential complications."
+    },
+    "possible_causes": [
+      "High salt intake",
+      "Obesity",
+      "Lack of exercise",
+      "Chronic stress"
+    ],
+    "medical_relief": [
+      "Lifestyle changes (low-sodium diet, regular exercise)",
+      "Medications (Beta-blockers, ACE inhibitors)",
+      "Monitoring blood pressure regularly"
+    ]
+  },
+  {
+    "name": "Migraine",
+    "symptoms": {
+      "intense_headache": "Severe throbbing pain, usually on one side of the head.",
+      "nausea": "Feeling sick or vomiting.",
+      "light_sensitivity": "Discomfort or pain in bright light."
+    },
+    "possible_causes": [
+      "Hormonal changes",
+      "Stress and lack of sleep",
+      "Certain foods (caffeine, alcohol, chocolate)"
+    ],
+    "medical_relief": [
+      "Pain relievers (Ibuprofen, Naproxen)",
+      "Migraine-specific drugs (Triptans)",
+      "Avoiding triggers and maintaining a consistent sleep schedule"
+    ]
+  },
+  {
+    "name": "Cervical Spondylosis",
+    "symptoms": {
+      "neck_pain": "Persistent pain in the neck, often spreading to shoulders.",
+      "stiffness": "Difficulty moving the neck, especially in the morning.",
+      "tingling_sensation": "Numbness or weakness in arms and hands."
+    },
+    "possible_causes": [
+      "Aging and wear-and-tear of spinal discs",
+      "Sedentary lifestyle",
+      "Poor posture"
+    ],
+    "medical_relief": [
+      "Physical therapy and stretching exercises",
+      "Pain relief medications (NSAIDs)",
+      "Posture correction and ergonomic support"
+    ]
+  },
+  {
+    "name": "Paralysis (Brain Hemorrhage)",
+    "symptoms": {
+      "sudden_weakness": "Loss of strength, often on one side of the body.",
+      "speech_difficulty": "Slurred or unclear speech.",
+      "loss_of_balance": "Difficulty walking or maintaining posture."
+    },
+    "possible_causes": [
+      "Stroke",
+      "Head injury",
+      "High blood pressure"
+    ],
+    "medical_relief": [
+      "Emergency medical care (clot-busting drugs for stroke)",
+      "Physical therapy for recovery",
+      "Blood pressure management"
+    ]
+  },
+  {
+    "name": "Jaundice",
+    "symptoms": {
+      "yellow_skin": "Discoloration of skin and eyes.",
+      "dark_urine": "Urine appears much darker than usual.",
+      "fatigue": "Persistent tiredness and weakness."
+    },
+    "possible_causes": [
+      "Liver disease (Hepatitis, Cirrhosis)",
+      "Blocked bile ducts",
+      "Infections affecting the liver"
+    ],
+    "medical_relief": [
+      "Treating the underlying liver condition",
+      "Hydration and proper nutrition",
+      "Avoiding alcohol and liver-damaging medications"
+    ]
+  },
+  {
+    "name": "Malaria",
+    "symptoms": {
+      "high_fever": "Recurrent fever with chills.",
+      "sweating": "Excessive sweating during fever episodes.",
+      "body_pain": "Muscle and joint aches."
+    },
+    "possible_causes": [
+      "Bite from an infected mosquito (Plasmodium parasite)",
+      "Travel to high-risk areas",
+      "Weak immune system"
+    ],
+    "medical_relief": [
+      "Antimalarial drugs (Chloroquine, Artemisinin-based therapy)",
+      "Preventive measures (mosquito nets, repellents)",
+      "Hydration and rest"
+    ]
+  },
+  {
+    "name": "Chickenpox",
+    "symptoms": {
+      "skin_rash": "Red, itchy blisters all over the body.",
+      "fever": "Mild to high fever accompanying the rash.",
+      "fatigue": "Tiredness and weakness."
+    },
+    "possible_causes": [
+      "Varicella-zoster virus infection",
+      "Close contact with an infected person"
+    ],
+    "medical_relief": [
+      "Calamine lotion for itching",
+      "Acetaminophen for fever",
+      "Antiviral medication in severe cases"
+    ]
+  },
+  {
+    "name": "Dengue",
+    "symptoms": {
+      "high_fever": "Sudden high temperature, often with chills.",
+      "severe_joint_pain": "Pain in muscles and joints, sometimes called 'breakbone fever'.",
+      "skin_rash": "Red rash that may appear after fever subsides."
+    },
+    "possible_causes": [
+      "Bite from Aedes mosquito carrying dengue virus",
+      "Lack of immunity in affected individuals"
+    ],
+    "medical_relief": [
+      "Supportive care (hydration, rest)",
+      "Paracetamol for fever",
+      "Avoid NSAIDs like aspirin (risk of bleeding)"
+    ]
+  },
+  {
+    "name": "Typhoid",
+    "symptoms": {
+      "high_fever": "Prolonged fever lasting more than a week.",
+      "abdominal_pain": "Pain and discomfort in the stomach.",
+      "loss_of_appetite": "Reduced desire to eat."
+    },
+    "possible_causes": [
+      "Salmonella typhi infection",
+      "Contaminated food or water",
+      "Poor sanitation"
+    ],
+    "medical_relief": [
+      "Antibiotics (Ciprofloxacin, Azithromycin)",
+      "Proper hydration and electrolyte balance",
+      "Hygiene and sanitation improvements"
+    ]
+  },
+  {
+    "name": "Hepatitis A",
+    "symptoms": {
+      "yellow_skin": "Jaundice due to liver inflammation.",
+      "fatigue": "Severe tiredness and weakness.",
+      "nausea": "Feeling of vomiting and loss of appetite."
+    },
+    "possible_causes": [
+      "Consumption of contaminated food or water",
+      "Close contact with an infected person"
+    ],
+    "medical_relief": [
+      "Rest and supportive care",
+      "Avoiding alcohol and fatty foods",
+      "Vaccination for prevention"
+    ]
+  },
+  {
+    "name": "Urinary Tract Infection (UTI)",
+    "symptoms": {
+      "burning_sensation": "Painful urination with a burning feeling.",
+      "frequent_urination": "Needing to urinate often, even with small amounts.",
+      "cloudy_urine": "Urine may appear cloudy or have a strong odor."
+    },
+    "possible_causes": [
+      "Bacterial infection (E. coli is the most common)",
+      "Holding urine for long periods",
+      "Poor hygiene"
+    ],
+    "medical_relief": [
+      "Antibiotics (Nitrofurantoin, Ciprofloxacin)",
+      "Drinking plenty of water",
+      "Cranberry juice (may help in some cases)"
+    ]
+  },
+  {
+    "name": "Hepatitis B",
+    "symptoms": {
+      "fatigue": "Persistent tiredness and weakness.",
+      "abdominal_pain": "Pain in the liver region.",
+      "joint_pain": "Swelling and discomfort in the joints."
+    },
+    "possible_causes": [
+      "Exposure to infected blood or bodily fluids",
+      "Unprotected sex",
+      "Sharing needles or razors",
+      "Mother-to-child transmission"
+    ],
+    "medical_relief": [
+      "Antiviral medications (Entecavir, Tenofovir)",
+      "Regular liver monitoring",
+      "Lifestyle changes to protect liver health",
+      "Vaccination for prevention"
+    ]
+  },
+  {
+    "name": "Hepatitis C",
+    "symptoms": {
+      "fatigue": "Persistent tiredness and weakness.",
+      "nausea": "Feeling of sickness and discomfort.",
+      "jaundice": "Yellowing of the skin and eyes."
+    },
+    "possible_causes": [
+      "Blood-to-blood contact with infected persons",
+      "Sharing needles or medical equipment",
+      "Unprotected sexual contact",
+      "Mother-to-child transmission"
+    ],
+    "medical_relief": [
+      "Antiviral medications (Sofosbuvir, Ledipasvir)",
+      "Regular liver function monitoring",
+      "Avoiding alcohol and liver-damaging substances",
+      "Healthy diet and hydration"
+    ]
+  },
+  {
+    "name": "Hepatitis D",
+    "symptoms": {
+      "jaundice": "Yellowing of the skin and eyes.",
+      "fluid_retention": "Swelling in the abdomen or legs.",
+      "nausea": "Persistent discomfort and vomiting."
+    },
+    "possible_causes": [
+      "Infection with Hepatitis B virus",
+      "Exposure to infected blood",
+      "Unprotected sexual contact",
+      "Mother-to-child transmission"
+    ],
+    "medical_relief": [
+      "Interferon therapy to control the virus",
+      "Liver transplantation in severe cases",
+      "Regular medical check-ups",
+      "Avoiding alcohol and liver-toxic substances"
+    ]
+  },
+  {
+    "name": "Hepatitis E",
+    "symptoms": {
+      "jaundice": "Yellowing of skin and eyes.",
+      "loss_of_appetite": "Reduced desire to eat.",
+      "dark_urine": "Urine appears darker than normal."
+    },
+    "possible_causes": [
+      "Consumption of contaminated food or water",
+      "Poor sanitation",
+      "Person-to-person transmission",
+      "Travel to endemic areas"
+    ],
+    "medical_relief": [
+      "Supportive care for symptom relief",
+      "Hydration and rest",
+      "Avoiding alcohol and fatty foods",
+      "Proper hygiene and sanitation practices"
+    ]
+  },
+  {
+    "name": "Alcoholic Hepatitis",
+    "symptoms": {
+      "jaundice": "Yellowing of skin and eyes.",
+      "abdominal_pain": "Pain in the liver area.",
+      "fluid_buildup": "Swelling in the abdomen due to fluid retention."
+    },
+    "possible_causes": [
+      "Chronic alcohol consumption",
+      "Liver inflammation and damage",
+      "Nutritional deficiencies",
+      "Genetic susceptibility"
+    ],
+    "medical_relief": [
+      "Complete abstinence from alcohol",
+      "Liver function monitoring",
+      "Nutritional therapy and supplements",
+      "Medication for liver support"
+    ]
+  },
+  {
+    "name": "Dimorphic Hemorrhoids (Piles)",
+    "symptoms": {
+      "rectal_bleeding": "Bleeding during bowel movements.",
+      "pain": "Discomfort and swelling in the anal area.",
+      "itching": "Persistent irritation around the anus."
+    },
+    "possible_causes": [
+      "Chronic constipation or diarrhea",
+      "Straining during bowel movements",
+      "Pregnancy and childbirth",
+      "Obesity and lack of exercise"
+    ],
+    "medical_relief": [
+      "High-fiber diet and increased water intake",
+      "Topical creams for relief",
+      "Minimally invasive procedures (laser treatment, rubber band ligation)",
+      "Surgical intervention in severe cases"
+    ]
+  },
+  {
+    "name": "Varicose Veins",
+    "symptoms": {
+      "swollen_veins": "Bulging, twisted veins, usually in the legs.",
+      "leg_pain": "Aching or discomfort after standing long hours.",
+      "itching": "Irritation and discomfort around the veins."
+    },
+    "possible_causes": [
+      "Weak vein walls and valves",
+      "Prolonged standing or sitting",
+      "Obesity and pregnancy",
+      "Genetic predisposition"
+    ],
+    "medical_relief": [
+      "Compression stockings for improved blood flow",
+      "Regular exercise and movement",
+      "Minimally invasive procedures (laser treatment, sclerotherapy)",
+      "Surgical removal of affected veins in severe cases"
+    ]
+  },
+  {
+    "name": "Hypoglycemia",
+    "symptoms": {
+      "shakiness": "Tremors and weakness due to low blood sugar.",
+      "sweating": "Excessive perspiration, even in cool conditions.",
+      "confusion": "Difficulty thinking or concentrating."
+    },
+    "possible_causes": [
+      "Excess insulin production",
+      "Skipping meals or prolonged fasting",
+      "Certain medications",
+      "Excessive alcohol consumption"
+    ],
+    "medical_relief": [
+      "Immediate consumption of fast-acting sugar (glucose tablets, juice)",
+      "Frequent small meals",
+      "Blood sugar monitoring",
+      "Adjusting medication dosage if necessary"
+    ]
+  },
+  {
+    "name": "Osteoarthritis",
+    "symptoms": {
+      "joint_pain": "Pain in the knees, hips, hands, or spine.",
+      "stiffness": "Limited range of motion in affected joints.",
+      "swelling": "Inflammation in the joints."
+    },
+    "possible_causes": [
+      "Wear and tear of joint cartilage",
+      "Aging and genetic factors",
+      "Previous joint injuries",
+      "Obesity and excessive strain on joints"
+    ],
+    "medical_relief": [
+      "Pain relief medications (NSAIDs, acetaminophen)",
+      "Physical therapy and exercises",
+      "Weight management",
+      "Joint replacement surgery in severe cases"
+    ]
+  },
+  {
+    "name": "Psoriasis",
+    "symptoms": {
+      "red_patches": "Inflamed, scaly skin that may crack or bleed.",
+      "itching": "Persistent irritation and discomfort.",
+      "joint_pain": "Associated with psoriatic arthritis."
+    },
+    "possible_causes": [
+      "Autoimmune response",
+      "Genetic factors",
+      "Triggers like stress, infections, or certain medications",
+      "Smoking and alcohol consumption"
+    ],
+    "medical_relief": [
+      "Topical treatments (steroids, vitamin D analogs)",
+      "Phototherapy (light therapy)",
+      "Oral and biologic medications",
+      "Moisturizing to prevent skin dryness"
+    ]
+  },
+  {
+    "name": "Impetigo",
+    "symptoms": {
+      "blisters": "Fluid-filled sores that burst and form crusts.",
+      "red_rash": "Spreading rash with yellowish crusting.",
+      "itching": "Persistent irritation and discomfort."
+    },
+    "possible_causes": [
+      "Bacterial infection (Staphylococcus, Streptococcus)",
+      "Poor hygiene",
+      "Close contact with infected individuals",
+      "Cuts or insect bites allowing bacteria entry"
+    ],
+    "medical_relief": [
+      "Topical or oral antibiotics",
+      "Keeping affected areas clean and dry",
+      "Avoiding scratching or touching sores",
+      "Using separate towels and personal hygiene items"
+    ]
+  },
+  {
+  "name": "Hypothyroidism",
+  "symptoms": {
+    "fatigue": "Extreme tiredness and lack of energy.",
+    "weight_gain": "Unexplained increase in body weight.",
+    "cold_intolerance": "Sensitivity to cold temperatures."
+  },
+  "possible_causes": [
+    "Iodine deficiency",
+    "Autoimmune disorders (Hashimoto’s thyroiditis)",
+    "Certain medications",
+    "Pituitary gland dysfunction"
+  ],
+  "medical_relief": [
+    "Thyroid hormone replacement therapy (Levothyroxine)",
+    "Regular thyroid function monitoring",
+    "Dietary adjustments for iodine intake",
+    "Managing stress and maintaining a healthy lifestyle"
+  ]
+},
+{
+    "name": "Acne",
+    "symptoms": {
+        "pimples": "Red, inflamed bumps on the skin filled with pus.",
+        "blackheads": "Small, dark spots on the skin caused by clogged pores.",
+        "whiteheads": "Small, white bumps on the skin due to trapped oil and bacteria.",
+        "oily_skin": "Excessive production of sebum leading to greasy skin.",
+        "redness": "Inflamed and irritated skin, especially around breakouts.",
+        "scarring": "Dark spots or deep marks left behind after acne heals."
+    },
+    "possible_causes": [
+        "Hormonal changes (puberty, pregnancy, menstruation)",
+        "Excessive oil production by sebaceous glands",
+        "Bacterial infections (Propionibacterium acnes)",
+        "Clogged hair follicles due to dead skin cells",
+        "Dietary factors (high sugar and dairy consumption)",
+        "Stress and lack of sleep"
+    ],
+    "medical_relief": [
+        "Topical treatments (Benzoyl Peroxide, Salicylic Acid, Retinoids)",
+        "Oral medications (Antibiotics, Hormonal therapy, Isotretinoin for severe cases)",
+        "Maintaining a proper skincare routine with gentle cleansing",
+        "Avoiding excessive touching or picking at acne-prone areas",
+        "Dietary adjustments to reduce inflammation"
+    ]
+},
+  {
+    "name": "Tuberculosis",
+    "symptoms": {
+      "chronic_cough": "Persistent cough lasting more than three weeks.",
+      "weight_loss": "Unintentional and significant weight loss.",
+      "night_sweats": "Excessive sweating at night.",
+      "fatigue": "Extreme tiredness and lack of energy."
+    },
+    "possible_causes": [
+      "Bacterial infection (Mycobacterium tuberculosis)",
+      "Weakened immune system",
+      "Close contact with infected individuals",
+      "Poor living conditions"
+    ],
+    "medical_relief": [
+      "Antibiotics (Isoniazid, Rifampin, Ethambutol, Pyrazinamide)",
+      "Long-term treatment (6 months or more)",
+      "Improved nutrition and hygiene",
+      "Regular medical follow-ups"
+    ]
+  },
+  {
+    "name": "Common Cold",
+    "symptoms": {
+      "runny_nose": "Excessive mucus production in the nasal passages.",
+      "sneezing": "Frequent sneezing due to irritation in the nasal cavity.",
+      "sore_throat": "Pain and irritation in the throat.",
+      "mild_fever": "Slight increase in body temperature."
+    },
+    "possible_causes": [
+      "Viral infection (Rhinovirus, Coronavirus, Adenovirus)",
+      "Weakened immune system",
+      "Cold weather exposure",
+      "Close contact with infected individuals"
+    ],
+    "medical_relief": [
+      "Over-the-counter cold medications",
+      "Increased fluid intake",
+      "Rest and proper sleep",
+      "Vitamin C supplements"
+    ]
+  },
+  {
+    "name": "Pneumonia",
+    "symptoms": {
+      "chest_pain": "Sharp or stabbing pain when breathing or coughing.",
+      "fever": "High body temperature with chills.",
+      "difficulty_breathing": "Shortness of breath and rapid breathing.",
+      "cough": "Persistent cough with mucus production."
+    },
+    "possible_causes": [
+      "Bacterial infection (Streptococcus pneumoniae, Mycoplasma pneumoniae)",
+      "Viral infection (Influenza, RSV, COVID-19)",
+      "Weakened immune system",
+      "Smoking and air pollution"
+    ],
+    "medical_relief": [
+      "Antibiotics for bacterial pneumonia",
+      "Antiviral medications for viral pneumonia",
+      "Oxygen therapy if needed",
+      "Plenty of rest and hydration"
+    ]
+  },
+  {
+    "name": "Heart Attack",
+    "symptoms": {
+      "chest_pain": "Severe pain or pressure in the chest.",
+      "shortness_of_breath": "Difficulty breathing, even at rest.",
+      "nausea": "Feeling sick to the stomach or vomiting.",
+      "cold_sweats": "Excessive sweating with a cold, clammy feeling."
+    },
+    "possible_causes": [
+      "Blocked coronary arteries",
+      "High cholesterol levels",
+      "Smoking and high blood pressure",
+      "Obesity and diabetes"
+    ],
+    "medical_relief": [
+      "Immediate aspirin intake to prevent clotting",
+      "Emergency medical treatment (angioplasty, stents)",
+      "Lifestyle changes (healthy diet, exercise)",
+      "Medications (beta-blockers, statins, blood thinners)"
+    ]
+  },
+  {
+    "name": "Hyperthyroidism",
+    "symptoms": {
+      "weight_loss": "Unintentional weight loss despite normal eating habits.",
+      "rapid_heartbeat": "Increased heart rate (tachycardia).",
+      "tremors": "Shaking hands or fingers.",
+      "heat_intolerance": "Increased sensitivity to heat and excessive sweating."
+    },
+    "possible_causes": [
+      "Overactive thyroid gland",
+      "Graves' disease (autoimmune condition)",
+      "Excessive iodine intake",
+      "Thyroid nodules"
+    ],
+    "medical_relief": [
+      "Antithyroid medications (Methimazole, Propylthiouracil)",
+      "Radioactive iodine therapy",
+      "Beta-blockers to control symptoms",
+      "Surgical removal of the thyroid in severe cases"
+    ]
+  },
+  {
+    "name": "Arthritis",
+    "symptoms": {
+      "joint_pain": "Persistent pain and stiffness in the joints.",
+      "swelling": "Inflammation and redness in affected joints.",
+      "reduced_mobility": "Difficulty in joint movement.",
+      "morning_stiffness": "Stiffness in joints, especially after waking up."
+    },
+    "possible_causes": [
+      "Autoimmune diseases (Rheumatoid arthritis, Lupus)",
+      "Wear and tear (Osteoarthritis)",
+      "Infections leading to joint inflammation",
+      "Genetic predisposition"
+    ],
+    "medical_relief": [
+      "Pain relievers (NSAIDs like Ibuprofen, Naproxen)",
+      "Physical therapy and exercise",
+      "Corticosteroid injections",
+      "Joint replacement surgery in severe cases"
+    ]
+  },
+  {
+    "name": "(Vertigo) Paroxysmal Positional Vertigo",
+    "symptoms": {
+      "dizziness": "Sudden spinning sensation or loss of balance.",
+      "nausea": "Feeling sick or vomiting.",
+      "unsteady_walking": "Loss of stability while walking.",
+      "blurred_vision": "Difficulty focusing due to vertigo."
+    },
+    "possible_causes": [
+      "Inner ear disorders",
+      "Calcium deposits in the ear canal",
+      "Head trauma or injury",
+      "Vestibular nerve dysfunction"
+    ],
+    "medical_relief": [
+      "Epley maneuver (specific head movements to reposition ear crystals)",
+      "Vestibular rehabilitation therapy",
+      "Antivertigo medications (Meclizine, Diazepam)",
+      "Surgical intervention in rare cases"
+    ]
+  }
+
+]

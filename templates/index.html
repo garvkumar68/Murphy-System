@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Detection System</title>
+    <style>
+        :root {
+            --primary-color: #095d7e;
+            --secondary-color: #ccecee;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 80px;
+        }
+
+        .nav-bar {
+            background-color: var(--white);
+            padding: 15px 0;
+            margin-bottom: 30px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background-color: var(--secondary-color);
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .select-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .select-box {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--secondary-color);
+            border-radius: 10px;
+            background-color: var(--white);
+            cursor: pointer;
+            min-height: 45px;
+            font-weight: 500;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: var(--white);
+            border: 2px solid var(--secondary-color);
+            border-radius: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-bottom: 2px solid var(--secondary-color);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .dropdown-content label {
+            display: block;
+            padding: 12px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content label:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .selected-items {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .selected-item {
+            background-color: var(--secondary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .remove-item {
+            cursor: pointer;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .symptom-count {
+            text-align: center;
+            margin-top: 15px;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        button {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #074b66;
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: none;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+
+        @media (max-width: 600px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            body {
+                padding-top: 160px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<!-- Rest of your HTML and JavaScript code remains the same -->
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link active">Disease Detection</a>
+            <a href="breastcancer.html" class="nav-link">Breast Tumor</a>
+            <a href="braincancer.html" class="nav-link">Brain Tumor</a>
+            <a href="https://garvkumar68.github.io/BrainWizard-website/home24.html" class="nav-link">BrainWizard</a> 
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="container">
+            <h1>Disease Prediction System</h1>
+            <div class="select-container">
+                <div class="select-box" onclick="toggleDropdown()">Select Symptoms (minimum 3)</div>
+                <div class="dropdown-content" id="dropdown">
+                    <input type="text" class="search-box" placeholder="Search symptoms..." onkeyup="filterSymptoms()" id="searchBox">
+                </div>
+                <div class="selected-items" id="selectedItems"></div>
+                <div class="symptom-count" id="symptomCount"></div>
+            </div>
+            <button onclick="predict()" id="predictButton" disabled>Predict Disease</button>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        // Your existing JavaScript code remains the same
+        const symptoms = ['receiving_blood_transfusion', 'red_sore_around_nose', 'abnormal_menstruation', 
+            'continuous_sneezing', 'breathlessness', 'blackheads', 'shivering', 'dizziness', 'back_pain', 
+            'unsteadiness', 'yellow_crust_ooze', 'muscle_weakness', 'loss_of_balance', 'chills', 
+            'ulcers_on_tongue', 'stomach_bleeding', 'lack_of_concentration', 'coma', 'neck_pain', 
+            'weakness_of_one_body_side', 'diarrhoea', 'receiving_unsterile_injections', 'headache', 
+            'family_history', 'fast_heart_rate', 'pain_behind_the_eyes', 'sweating', 'mucoid_sputum', 
+            'spotting_ urination', 'sunken_eyes', 'dischromic _patches', 'nausea', 'dehydration', 
+            'loss_of_appetite', 'abdominal_pain', 'stomach_pain', 'yellowish_skin', 'altered_sensorium', 
+            'chest_pain', 'muscle_wasting', 'vomiting', 'mild_fever', 'high_fever', 'red_spots_over_body', 
+            'dark_urine', 'itching', 'yellowing_of_eyes', 'fatigue', 'joint_pain', 'muscle_pain'];
+
+        const selectedSymptoms = new Set();
+        const MIN_SYMPTOMS = 3;
+
+        window.onload = function() {
+            const dropdown = document.getElementById('dropdown');
+            symptoms.forEach(symptom => {
+                const label = document.createElement('label');
+                const displayName = formatSymptomName(symptom);
+                
+                label.innerHTML = `
+                    <input type="checkbox" value="${symptom}" onchange="toggleSymptom(this)">
+                    ${displayName}
+                `;
+                
+                dropdown.appendChild(label);
+            });
+            updateSymptomCount();
+
+            // Set active nav link
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        };
+
+        function formatSymptomName(symptom) {
+            return symptom
+                .replace(/_/g, ' ')
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function filterSymptoms() {
+            const searchText = document.getElementById('searchBox').value.toLowerCase();
+            const labels = document.querySelectorAll('.dropdown-content label');
+            
+            labels.forEach(label => {
+                const text = label.textContent.toLowerCase();
+                label.style.display = text.includes(searchText) ? 'block' : 'none';
+            });
+        }
+
+        function toggleSymptom(checkbox) {
+            if (checkbox.checked) {
+                selectedSymptoms.add(checkbox.value);
+            } else {
+                selectedSymptoms.delete(checkbox.value);
+            }
+            updateSelectedItems();
+            updateSymptomCount();
+        }
+
+        function updateSymptomCount() {
+            const count = selectedSymptoms.size;
+            const countDiv = document.getElementById('symptomCount');
+            const predictButton = document.getElementById('predictButton');
+            
+            if (count < MIN_SYMPTOMS) {
+                countDiv.textContent = `Please select at least ${MIN_SYMPTOMS} symptoms (${count} selected)`;
+                predictButton.disabled = true;
+            } else {
+                countDiv.textContent = `${count} symptoms selected`;
+                predictButton.disabled = false;
+            }
+        }
+
+        function updateSelectedItems() {
+            const container = document.getElementById('selectedItems');
+            container.innerHTML = '';
+            
+            selectedSymptoms.forEach(symptom => {
+                const div = document.createElement('div');
+                div.className = 'selected-item';
+                div.innerHTML = `
+                    ${formatSymptomName(symptom)}
+                    <span class="remove-item" onclick="removeSymptom('${symptom}')">&times;</span>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function removeSymptom(symptom) {
+            selectedSymptoms.delete(symptom);
+            const checkbox = document.querySelector(`input[value="${symptom}"]`);
+            if (checkbox) checkbox.checked = false;
+            updateSelectedItems();
+            updateSymptomCount();
+        }
+
+        document.addEventListener('click', function(event) {
+            const container = document.querySelector('.select-container');
+            const dropdown = document.getElementById('dropdown');
+            
+            if (!container.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        function predict() {
+            if (selectedSymptoms.size < MIN_SYMPTOMS) {
+                const resultDiv = document.getElementById('result');
+                resultDiv.style.display = 'block';
+                resultDiv.className = 'warning';
+                resultDiv.textContent = `Please select at least ${MIN_SYMPTOMS} symptoms before prediction`;
+                return;
+            }
+
+            const data = {};
+            symptoms.forEach(symptom => {
+                data[symptom] = selectedSymptoms.has(symptom) ? 1 : 0;
+            });
+
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                resultDiv.style.display = 'block';
+                resultDiv.className = 'success';
+                resultDiv.textContent = `Predicted Disease: ${data.prediction}`;
+            })
+            .catch(error => {
+                const resultDiv = document.getElementById('result');
+                resultDiv.style.display = 'block';
+                resultDiv.className = 'error';
+                resultDiv.textContent = 'Error occurred during prediction';
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

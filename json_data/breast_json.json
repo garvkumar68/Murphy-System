@@ -1,0 +1,189 @@
+  {
+    "benign": {
+      "title": "Benign Breast Tumor Report",
+      "definition": "A benign breast tumor is a non-cancerous growth that does not invade surrounding tissues or spread to other parts of the body.",
+      "types": [
+        "Fibroadenomas",
+        "Cysts",
+        "Intraductal papillomas",
+        "Fat necrosis"
+      ],
+      "symptoms": {
+        "common": [
+          "Lump in the breast that is smooth and movable",
+          "Mild breast pain or tenderness",
+          "Swelling or localized discomfort",
+          "Nipple discharge (non-bloody)",
+          "Changes in breast shape"
+        ],
+        "rare": [
+          "Inflammation or redness",
+          "Increase in breast lump size"
+        ]
+      },
+      "possible_causes": [
+        "Hormonal fluctuations (estrogen and progesterone imbalance)",
+        "Fibrocystic breast changes",
+        "Inflammation due to infections",
+        "Injury to breast tissue",
+        "Genetic predisposition"
+      ],
+      "risk_factors": [
+        "Family history of benign breast disease",
+        "Hormonal replacement therapy (HRT)",
+        "Use of birth control pills",
+        "High-fat diet",
+        "Obesity"
+      ],
+      "diagnosis": {
+        "tests": [
+          "Physical examination",
+          "Ultrasound (to differentiate solid vs. fluid-filled lumps)",
+          "Mammogram (to check for abnormal growths)",
+          "Fine-needle aspiration biopsy (for cystic lumps)",
+          "Core biopsy (for solid tumors)"
+        ],
+        "follow_up": "Regular monitoring every 6-12 months for changes in size or symptoms."
+      },
+      "medical_treatment": [
+        "Observation and monitoring (if asymptomatic)",
+        "Needle aspiration (for fluid-filled cysts)",
+        "Surgical removal (if the lump grows or causes discomfort)",
+        "Hormonal therapy in rare cases (e.g., Tamoxifen)"
+      ],
+      "lifestyle_and_precautions": {
+        "dietary_guidelines": [
+          "Increase intake of fruits, vegetables, and whole grains",
+          "Reduce saturated fats and processed foods",
+          "Include omega-3 fatty acids (found in fish, flaxseeds, and walnuts)"
+        ],
+        "preventive_measures": [
+          "Perform regular breast self-exams",
+          "Maintain a healthy weight",
+          "Reduce caffeine and alcohol consumption",
+          "Avoid exposure to unnecessary radiation"
+        ],
+        "emotional_wellness": [
+          "Stay informed and consult a doctor if any changes occur",
+          "Join support groups for breast health awareness",
+          "Manage stress through yoga and meditation"
+        ]
+      }
+    },
+
+    "malignant": {
+      "title": "Malignant Breast Cancer Report",
+      "definition": "Malignant breast cancer refers to the presence of cancerous cells that can grow uncontrollably and spread to other parts of the body (metastasis).",
+      "types": [
+        "Invasive Ductal Carcinoma (IDC)",
+        "Invasive Lobular Carcinoma (ILC)",
+        "Triple-Negative Breast Cancer",
+        "HER2-Positive Breast Cancer",
+        "Inflammatory Breast Cancer (IBC)"
+      ],
+      "symptoms": {
+        "common": [
+          "Hard, irregularly shaped lump in the breast",
+          "Skin dimpling or thickening (peau d’orange appearance)",
+          "Persistent breast pain",
+          "Nipple inversion or discharge (bloody or clear)",
+          "Swollen lymph nodes in the armpit"
+        ],
+        "advanced": [
+          "Bone pain (if cancer has spread)",
+          "Unexplained weight loss",
+          "Fatigue and weakness",
+          "Shortness of breath (if cancer affects lungs)"
+        ]
+      },
+      "possible_causes": [
+        "Genetic mutations (BRCA1 and BRCA2)",
+        "Hormonal imbalance (excess estrogen exposure)",
+        "Lifestyle factors (smoking, alcohol, high-fat diet)",
+        "Environmental exposure (radiation, toxins)",
+        "Previous history of breast cancer or abnormal cells"
+      ],
+      "risk_factors": [
+        "Family history of breast cancer",
+        "Prolonged hormone replacement therapy",
+        "Late menopause (after age 55)",
+        "Obesity and sedentary lifestyle",
+        "High alcohol consumption"
+      ],
+      "diagnosis": {
+        "tests": [
+          "Mammogram (detailed imaging for abnormalities)",
+          "Breast MRI (to detect tumor extent)",
+          "Biopsy (to confirm cancerous cells)",
+          "Genetic testing (BRCA1/BRCA2 mutations)",
+          "PET scan (for metastasis detection)"
+        ],
+        "staging": {
+          "Stage 0": "Ductal carcinoma in situ (DCIS) - non-invasive",
+          "Stage 1": "Small localized tumor with no lymph node involvement",
+          "Stage 2": "Larger tumor or slight spread to lymph nodes",
+          "Stage 3": "Locally advanced cancer (lymph nodes and skin involvement)",
+          "Stage 4": "Metastatic cancer (spread to distant organs)"
+        }
+      },
+      "treatment_options": {
+        "surgery": [
+          "Lumpectomy (breast-conserving surgery)",
+          "Mastectomy (removal of breast tissue)",
+          "Lymph node dissection"
+        ],
+        "radiation_therapy": [
+          "External beam radiation therapy",
+          "Brachytherapy (internal radiation)"
+        ],
+        "chemotherapy": [
+          "Neoadjuvant chemotherapy (before surgery)",
+          "Adjuvant chemotherapy (after surgery)",
+          "Targeted drug therapy"
+        ],
+        "hormonal_therapy": [
+          "Tamoxifen (for hormone receptor-positive cancer)",
+          "Aromatase inhibitors (postmenopausal women)"
+        ]
+      },
+      "lifestyle_and_precautions": {
+        "dietary_guidelines": [
+          "Increase intake of antioxidants (berries, green tea)",
+          "Consume lean proteins and high-fiber foods",
+          "Avoid processed foods and high-sugar intake"
+        ],
+        "preventive_measures": [
+          "Routine mammograms and screenings",
+          "Limit alcohol consumption",
+          "Maintain a healthy weight",
+          "Stay physically active"
+        ],
+        "emotional_wellness": [
+          "Seek professional counseling",
+          "Join cancer support groups",
+          "Practice relaxation techniques (meditation, deep breathing)"
+        ]
+      }
+    },
+
+    "normal": {
+      "title": "Breast Health Report",
+      "message": "No signs of breast cancer detected. However, maintaining breast health is important for long-term well-being.",
+      "preventive_measures": [
+        "Perform monthly breast self-exams",
+        "Get regular mammograms (based on age and risk factors)",
+        "Follow a balanced diet rich in vegetables, lean proteins, and healthy fats",
+        "Stay physically active and maintain a healthy BMI"
+      ],
+      "when_to_consult_doctor": [
+        "If you notice sudden lumps or changes in breast shape",
+        "Persistent pain or discomfort",
+        "Unusual nipple discharge or skin changes"
+      ],
+      "lifestyle_tips": [
+        "Wear a properly fitting bra for breast support",
+        "Avoid excessive alcohol and smoking",
+        "Manage stress through yoga, meditation, and regular exercise"
+      ]
+    }
+  }

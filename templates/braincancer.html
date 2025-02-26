@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brain Tumor Detection using MRI Images">
+    <title>Brain Tumor Detector</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        :root {
+            --primary-bg: #095d7e;
+            --secondary-bg: #ccecee;
+            --primary-accent: #4a90e2;
+            --hover-accent: #357ac9;
+            --success-color: #27ae60;
+            --failure-color: #ff0000;
+            --error-color: #e74c3c;
+            --text-primary: #ffffff;
+            --text-secondary: #d1d1d1;
+            --tertiary-bg: #ffffff;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --border-radius-sm: 0.625rem;
+            --border-radius-md: 0.9375rem;
+            --border-radius-lg: 1.5625rem;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            background: var(--tertiary-bg);
+            padding: clamp(var(--spacing-md), 5vw, var(--spacing-lg));
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .header h1 {
+            color: var(--primary-bg);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: var(--spacing-xs);
+            font-weight: 700;
+        }
+
+        .header p {
+            color: var(--primary-bg);
+            font-size: clamp(0.875rem, 2vw, 1rem);
+        }
+
+        .upload-box {
+            border: 3px dashed var(--primary-accent);
+            border-radius: var(--border-radius-sm);
+            padding: var(--spacing-lg);
+            cursor: pointer;
+            transition: all 200ms ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-xs);
+            margin: var(--spacing-md) 0;
+        }
+
+        .upload-box:hover {
+            background: rgba(74, 144, 226, 0.15);
+            border-color: var(--hover-accent);
+        }
+
+        .upload-box i {
+            font-size: clamp(2rem, 6vw, 3.125rem);
+            color: var(--primary-accent);
+        }
+
+        .upload-box p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        #imageInput {
+            display: none;
+        }
+
+        .upload-btn {
+            background: var(--primary-accent);
+            color: var(--text-primary);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            border-radius: var(--border-radius-lg);
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 200ms ease;
+            width: 100%;
+            max-width: 200px;
+            margin: var(--spacing-xs) auto;
+            display: block;
+        }
+
+        .upload-btn:hover {
+            background: var(--hover-accent);
+            transform: translateY(-2px);
+        }
+
+        .preview-section {
+            display: none;
+            margin-top: var(--spacing-md);
+        }
+
+        .image-preview {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-sm);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-section {
+            display: none;
+            margin-top: var(--spacing-md);
+        }
+
+        .result-box {
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-weight: 500;
+        }
+
+        .result-box.tumor {
+            background: var(--error-color);
+        }
+
+        .result-box.no-tumor {
+            background: var(--success-color);
+        }
+
+        .loader {
+            display: none;
+            width: 50px;
+            height: 50px;
+            margin: var(--spacing-md) auto;
+            border: 5px solid var(--text-secondary);
+            border-radius: 50%;
+            border-top-color: var(--primary-accent);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: var(--spacing-md); }
+            .upload-box { padding: var(--spacing-md); }
+            .upload-btn {
+                font-size: 1rem;
+                padding: var(--spacing-xs) var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Brain Tumor Detector</h1>
+            <p>Upload an MRI image to detect the presence of a brain tumor.</p>
+        </div>
+
+        <label for="imageInput" class="upload-box">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Click or Drag & Drop to Upload</p>
+            <input type="file" id="imageInput" accept="image/*" aria-label="Upload MRI image">
+        </label>
+
+        <div class="preview-section" id="previewSection">
+            <img id="preview" class="image-preview" src="#" alt="Image Preview">
+        </div>
+
+        <button class="upload-btn" onclick="uploadImage()">Predict</button>
+
+        <div class="loader" id="loader"></div>
+
+        <div class="result-section" id="resultSection">
+            <div id="result" class="result-box"></div>
+        </div>
+    </div>
+    <script>
+        // API configuration
+        const API_URL = 'http://127.0.0.1:9500';
+    
+        document.getElementById("imageInput").addEventListener("change", function(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var img = document.getElementById("preview");
+                img.src = reader.result;
+                document.getElementById("previewSection").style.display = "block";
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        });
+    
+        function uploadImage() {
+            var fileInput = document.getElementById("imageInput");
+            if (fileInput.files.length === 0) {
+                alert("Please select an image first.");
+                return;
+            }
+    
+            var formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+    
+            document.getElementById("loader").style.display = "block";
+            document.getElementById("resultSection").style.display = "none";
+    
+            $.ajax({
+                url: `${API_URL}/predict`,
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    document.getElementById("loader").style.display = "none";
+                    var resultBox = document.getElementById("result");
+                    var uploadBtn = document.querySelector(".upload-btn");
+    
+                    resultBox.classList.remove("tumor", "no-tumor");
+                    uploadBtn.style.background = "";
+    
+                    const prediction = response.prediction;
+                    const confidence = response.confidence;
+    
+                    resultBox.innerHTML = `<p>${prediction} (${confidence})</p>`;
+    
+                    if (prediction.toLowerCase().includes("tumor detected")) {
+                        resultBox.classList.add("tumor");
+                        uploadBtn.style.background = "red";
+                    } else {
+                        resultBox.classList.add("no-tumor");
+                        uploadBtn.style.background = "green";
+                    }
+    
+                    document.getElementById("resultSection").style.display = "block";
+                },
+                error: function(xhr, status, error) {
+                    document.getElementById("loader").style.display = "none";
+                    document.getElementById("resultSection").style.display = "block";
+                    document.getElementById("result").innerHTML = 
+                        `<p style='color:red;'>Error in prediction: ${error}</p>`;
+                }
+            });
+        }
+    </script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
