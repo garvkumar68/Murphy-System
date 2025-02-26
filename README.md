@@ -37,7 +37,7 @@ Before running the system, make sure you have the following installed:
 
 1️⃣ Clone the repository:
 ```bash
-$ git clone https://github.com/Rathoreatri03/Murphy-Systum.git
+$ git clone https://github.com/garvkumar68/Murphy-System
 $ cd medical-diagnosis-system
 ```
 
